@@ -6,9 +6,9 @@
 
 class Matrix{
     private:
-    int str;
-    int cols;
-    float **matrix;
+    int str; //количество строк
+    int cols; // количества столбцов
+    float **matrix; //указатель на матрицу
 
     public:
     Matrix();
