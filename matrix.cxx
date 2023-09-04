@@ -1,11 +1,13 @@
 #include "matrix.hxx"
 
+//конструктор по умолчанию
 Matrix::Matrix(){
     str = 0;
     cols = 0;
     matrix = nullptr;
 }
 
+//конструктор с двумя параметрами
 Matrix::Matrix(int str, int cols){
     this->str = str;
     this->cols = cols;
@@ -15,6 +17,7 @@ Matrix::Matrix(int str, int cols){
     }
 }
 
+//конструктор копирования
 Matrix::Matrix(const Matrix &mat){
     str = mat.str;
     cols = mat.cols;
@@ -36,6 +39,7 @@ Matrix::~Matrix(){
     delete[] matrix;
 }
 
+//функция ввода матрицы
 void Matrix::enterMatrix(){
     std::cout << "┌───────────────────────────────────────────────────" << std::endl;
     for(int i = 0; i < str; i++){
@@ -48,7 +52,7 @@ void Matrix::enterMatrix(){
     }
 }
 
-
+//функция вывода на экран
 void Matrix::outputMatrix(){
     std::cout << "│" << std::endl;
     std::cout << "│ Результат" << std::endl;
@@ -111,6 +115,7 @@ Matrix Matrix::operator-(const Matrix &other){
     return temp;
 }
 
+//функция умножения матрицы на число
 Matrix Matrix::mulNum(float number){
     Matrix temp(str, cols);
     for(int i = 0; i < str; i++){
@@ -121,6 +126,7 @@ Matrix Matrix::mulNum(float number){
     return temp;
 }
 
+//функция транспонирования
 Matrix Matrix::transposition(){
     Matrix temp(cols, str);
     for(int i = 0; i < cols; i++){
